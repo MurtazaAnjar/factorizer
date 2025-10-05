@@ -15,4 +15,11 @@ TEST_CASE( "Factorizer returns accurate prime factors" ) {
     REQUIRE( factorizer(17) == std::vector<int>{17} );
     REQUIRE( factorizer(1).empty() );
     REQUIRE( factorizer(0).empty() );
+
+    REQUIRE( !isPrime(1));
+    REQUIRE( isPrime(2));
+    REQUIRE( isPrime(3));
+    REQUIRE( !isPrime(4));
+
+
 }

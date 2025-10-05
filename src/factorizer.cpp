@@ -26,3 +26,7 @@ std::vector<int> factorizer(int val) {
     }
     return result;
 }
+
+bool isPrime(const int val) {
+    return (factorizer(val) == std::vector<int>{val})? true : false;
+}
