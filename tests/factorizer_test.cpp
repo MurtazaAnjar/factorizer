@@ -8,22 +8,23 @@
 #include "../src/factorizer.h"
 #include <vector>
 
-TEST_CASE( "Factorizer returns accurate prime factors" ) {
-    REQUIRE( factorizer(100) == std::vector<int>{2,2,5,5} );
-    REQUIRE( factorizer(35) == std::vector<int>{5,7} );
-    REQUIRE( factorizer(24) == std::vector<int>{2,2,2,3} );
-    REQUIRE( factorizer(17) == std::vector<int>{17} );
-    REQUIRE( factorizer(1).empty() );
-    REQUIRE( factorizer(0).empty() );
+TEST_CASE( "Factorizer members return accurately" ) {
+    factorizer test;
+    REQUIRE( test.primeFactors(100) == std::vector<int>{2,2,5,5} );
+    REQUIRE( test.primeFactors(35) == std::vector<int>{5,7} );
+    REQUIRE( test.primeFactors(24) == std::vector<int>{2,2,2,3} );
+    REQUIRE( test.primeFactors(17) == std::vector<int>{17} );
+    REQUIRE( test.primeFactors(1).empty() );
+    REQUIRE( test.primeFactors(0).empty() );
 
-    REQUIRE( !isPrime(1));
-    REQUIRE( !isPrime(0));
-    REQUIRE( isPrime(2));
-    REQUIRE( isPrime(3));
-    REQUIRE( !isPrime(4));
+    REQUIRE( !test.isPrime(1));
+    REQUIRE( !test.isPrime(0));
+    REQUIRE( test.isPrime(2));
+    REQUIRE( test.isPrime(3));
+    REQUIRE( !test.isPrime(4));
 
-    REQUIRE( !isComposite(1));
-    REQUIRE( !isComposite(5));
-    REQUIRE( isComposite(4));
-    REQUIRE( isComposite(12));
+    REQUIRE( !test.isComposite(1));
+    REQUIRE( !test.isComposite(5));
+    REQUIRE( test.isComposite(4));
+    REQUIRE( test.isComposite(12));
 }

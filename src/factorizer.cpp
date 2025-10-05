@@ -3,7 +3,7 @@
 #include <vector>
 #include <cmath>
 
-std::vector<int> factorizer(int val) {
+std::vector<int> factorizer::primeFactors(int val) {
     std::vector<int> result = {};
     if (val <= 1) {
         return result;
@@ -27,10 +27,11 @@ std::vector<int> factorizer(int val) {
     return result;
 }
 
-bool isPrime(const int val) {
-    return (factorizer(val) == std::vector<int>{val})? true : false;
+bool factorizer::isPrime(const int val) {
+    return (primeFactors(val) == std::vector<int>{val})? true : false;
 }
 
-bool isComposite(const int val) {
+bool factorizer::isComposite(const int val) {
     return (!isPrime(val) && val!=1)? true : false;
 }
+
