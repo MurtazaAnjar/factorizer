@@ -1,7 +1,14 @@
 #include <iostream>
 
-#include "src/hello.hpp"
+#include "src/factorizer.h"
 
 int main() {
-  std::cout << hello() << std::endl;
+    std::vector<int> myVector = factorizer(17);
+
+    // Print elements using a range-based for loop
+    for (const auto& element : myVector) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+    return 0;
 }

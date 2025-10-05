@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(hello_world)
+project(factorizer)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,7 +15,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(hello_test tests/hello_test.cpp src/hello.cpp)
-add_executable(main main.cpp src/hello.cpp)
+add_executable(factorizer_test tests/factorizer_test.cpp src/factorizer.cpp)
+add_executable(main main.cpp src/factorizer.cpp)
 
-target_link_libraries(hello_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(factorizer_test PRIVATE Catch2::Catch2WithMain)
