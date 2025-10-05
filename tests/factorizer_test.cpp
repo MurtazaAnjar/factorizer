@@ -17,9 +17,13 @@ TEST_CASE( "Factorizer returns accurate prime factors" ) {
     REQUIRE( factorizer(0).empty() );
 
     REQUIRE( !isPrime(1));
+    REQUIRE( !isPrime(0));
     REQUIRE( isPrime(2));
     REQUIRE( isPrime(3));
     REQUIRE( !isPrime(4));
 
-
+    REQUIRE( !isComposite(1));
+    REQUIRE( !isComposite(5));
+    REQUIRE( isComposite(4));
+    REQUIRE( isComposite(12));
 }

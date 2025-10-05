@@ -30,3 +30,7 @@ std::vector<int> factorizer(int val) {
 bool isPrime(const int val) {
     return (factorizer(val) == std::vector<int>{val})? true : false;
 }
+
+bool isComposite(const int val) {
+    return (!isPrime(val) && val!=1)? true : false;
+}
