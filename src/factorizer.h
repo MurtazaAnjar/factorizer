@@ -7,7 +7,7 @@ class factorizer {
         std::vector<int> primeFactors(int val);
         bool isPrime(int val);
         bool isComposite(int val);
-        //std::string reduceFraction(int numerator, int denominator);
+        std::string reduceFraction(int numerator, int denominator);
 };
 
 

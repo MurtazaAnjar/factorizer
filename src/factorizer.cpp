@@ -35,3 +35,35 @@ bool factorizer::isComposite(const int val) {
     return (!isPrime(val) && val!=1)? true : false;
 }
 
+std::string factorizer::reduceFraction(int numerator, int denominator) {
+    if (numerator%denominator == 0) {
+        return std::to_string(numerator/denominator);
+    }
+
+    std::vector<int> numFactors = primeFactors(numerator);
+    std::vector<int> denomFactors = primeFactors(denominator);
+    int lenNum = numFactors.size();
+    int lenDen = denomFactors.size();
+
+    for (int i=0; i<lenNum; i++) {
+        bool match = false;
+        for (int j=0; j<lenDen && !match; j++) {
+            if (numFactors[i] == denomFactors[j]) {
+                numFactors.erase(numFactors.begin()+i);
+                denomFactors.erase(denomFactors.begin()+j);
+                i--;
+                j--;
+                match = true;
+            }
+        }
+    }
+    int simpleNum = 1;
+    for (int element:numFactors) {
+        simpleNum *= element;
+    }
+    int simpleDenom = 1;
+    for (int element:denomFactors) {
+        simpleDenom *= element;
+    }
+    return std::to_string(simpleNum) + "/" + std::to_string(simpleDenom);
+}

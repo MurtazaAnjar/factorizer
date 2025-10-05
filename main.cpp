@@ -11,12 +11,14 @@ int main() {
 
     // Print elements using a range-based for loop
     std::cout<<"Here are the prime factors: "<< std::endl;
-    for (const auto& element : myVector) {
+    for (const int& element : myVector) {
         std::cout << element << " ,";
         std::cout<<"Is "<<element<<" prime? "<< driver.isPrime(element) << "\t";
         std::cout<<"Is "<<element<<" Composite? "<< driver.isComposite(element) << std::endl;
     }
     std::cout << std::endl;
+
+    std::cout<<"Simplify 122/14: "<< driver.reduceFraction(122,14) << std::endl;
 
     return 0;
 }
